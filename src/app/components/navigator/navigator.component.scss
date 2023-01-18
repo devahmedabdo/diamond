@@ -1,0 +1,15 @@
+div {
+  @apply bg-zinc-700 text-white py-8 text-center;
+  button {
+    @apply cursor-pointer text-lg uppercase;
+    fa-icon {
+      @apply duration-300 hover:text-orange-300;
+    }
+    span {
+      @apply pl-3;
+      &:nth-child(2) {
+        @apply duration-300 hover:text-orange-300;
+      }
+    }
+  }
+}

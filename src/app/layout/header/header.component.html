@@ -1,0 +1,115 @@
+<header>
+  <div class="container">
+    <div class="logo "><a href=""><img src="assets/logo.svg" alt="diamond logo">
+      </a></div>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a>
+          <ul>
+            <li><a href="">Home1</a></li>
+            <li><a href="">Home2</a></li>
+            <li><a href="">Home3</a></li>
+            <li><a href="">Home4</a></li>
+          </ul>
+        </li>
+        <li><a href="">Products</a>
+          <ul>
+            <li><a href="">Thumbnail Vertical</a></li>
+            <li><a href="">Thumbnail Horizontal</a></li>
+            <li><a href="">Thumbnail Gallery</a></li>
+            <li><a href="">Sticky Detail</a></li>
+            <li><a href="">Grouped Product</a></li>
+            <li><a href="">Variable Product</a></li>
+            <li><a href="">External/Affiliate Product</a></li>
+          </ul>
+        </li>
+        <li><a href="">Blog</a>
+          <ul>
+            <li><a href=""> Blog Grid 3 Columns</a></li>
+            <li><a href="">Blog List</a></li>
+            <li><a href="">Single Post</a></li>
+          </ul>
+        </li>
+        <li><a href="">Contant</a>
+          <ul>
+            <li><a href="">About Us 01</a></li>
+            <li><a href="">About Us 02</a></li>
+            <li><a href="">Lookbook</a></li>
+            <li><a href="">Faqs</a></li>
+            <li><a href="">404 Page</a></li>
+            <li><a href="">Icons</a></li>
+            <li><a href="">Coming Soon</a></li>
+          </ul>
+        </li>
+        <li><a href="">About Us</a>
+          <ul>
+            <li><a href="">About Us 1</a></li>
+            <li><a href="">About Us 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <div class="search-icon" (click)="changeActive([searchBox,searchBtn])">
+        <fa-icon [icon]="search"></fa-icon>
+      </div>
+      <div routerLink="favourite">
+        <fa-icon [icon]="heart"></fa-icon>
+        <div *ngIf="lovedItems.length != 0">
+          <span *ngIf="lovedItems.length > 9">+9</span>
+          <span *ngIf="lovedItems.length <= 9">{{lovedItems.length}}</span>
+        </div>
+      </div>
+      <div routerLink="cart">
+        <fa-icon [icon]="cart"></fa-icon>
+        <div *ngIf="cartItems.length != 0">
+          <span *ngIf="cartItems.length > 9">+9</span>
+          <span *ngIf="cartItems.length <= 9">{{cartItems.length}}</span>
+        </div>
+      </div>
+      <div class="user-icon" (click)="changeActive([userBox,userBtn])">
+        <fa-icon [icon]="user"></fa-icon>
+      </div>
+    </div>
+    <div class="user-box">
+      <button (click)="changeActive([userBtn,userBox])"></button>
+      <div>
+        <div style="--d:2 " class="user-information">
+          <img src="../../../assets/profile.jpg" alt="">
+          <div class="loged" *ngIf="loged">
+            <span>Hi !</span>
+            <h3>Ahmed </h3>
+          </div>
+          <div class="login" *ngIf="!loged">
+            <span routerLink="log">Login</span>
+            <h3 routerLink="log">SignUp</h3>
+          </div>
+        </div>
+        <div style="--d:3" class="currency">
+          <span>Select Country</span>
+          <div>
+            <button (click)="setCurrency('usa')" [ngClass]="{active:currency == 'usa'}">USA</button>
+            <button (click)="setCurrency('egp')" [ngClass]="{active:currency == 'egp'}">EGP</button>
+            <button (click)="setCurrency('uro')" [ngClass]="{active:currency == 'uro'}">URO</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-box">
+      <button (click)="changeActive([searchBox,searchBtn])">
+
+      </button>
+      <div>
+        <form action="">
+          <input type="text">
+          <button>Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="menu-icon" (click)="changeActive([menuBox,menuBtn])">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>

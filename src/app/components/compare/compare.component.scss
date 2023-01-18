@@ -1,0 +1,25 @@
+.compare {
+  @apply left-1/2 -translate-x-1/2 fixed w-full h-full top-32 opacity-0 -z-30 duration-500;
+  > button {
+    @apply -z-10 fixed w-full h-full bg-white bg-opacity-90;
+  }
+  table {
+    @apply w-full max-w-4xl mx-auto p-10;
+    td {
+      @apply text-center border;
+      img {
+        @apply max-w-[100px] rounded-md;
+        max-width: 100px;
+      }
+      button {
+        @apply px-2 py-1 bg-red-100 duration-300 hover:shadow-md hover:text-white  rounded-md;
+        &:hover {
+          @apply shadow-md text-white bg-red-200;
+        }
+      }
+    }
+  }
+  &.active {
+    @apply top-24 opacity-100 z-30;
+  }
+}

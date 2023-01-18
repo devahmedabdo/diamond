@@ -1,0 +1,51 @@
+<div class="product">
+  <div class="product-images">
+    <img [src]="details.image1" alt="product image one">
+    <img [src]="details.image2" alt="product image two">
+    <div class="btns">
+      <div data-text="add  to cart" data-text-stored="remove from cart" [ngClass]="{cart:details.cart}">
+        <div></div>
+        <fa-icon (click)="storeProduct(details,'cart' )" style="--d:1" [icon]="cart"></fa-icon>
+      </div>
+      <div data-text="quick view">
+        <fa-icon style="--d:2" [icon]="quickView"></fa-icon>
+      </div>
+      <div data-text="compare" data-text-stored="remove from compare" [ngClass]="{compare:details.compare}">
+        <div></div>
+        <fa-icon (click)="storeProduct(details,'compare' )" style="--d:3" [icon]="copmare"></fa-icon>
+      </div>
+      <div data-text="add to favourite" data-text-stored="remove from favourite" [ngClass]="{liked:details.favourite}">
+        <div></div>
+        <fa-icon (click)="storeProduct(details,'favourite' )" style="--d:4" [icon]="heart"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div class="type">
+    <span *ngFor="let type of details.type">{{type}}</span>
+  </div>
+  <div class="review">
+    <div class="review-star">
+      <div class="set-review">
+        <fa-icon [icon]="emptyStar"></fa-icon>
+        <fa-icon [icon]="emptyStar"></fa-icon>
+        <fa-icon [icon]="emptyStar"></fa-icon>
+        <fa-icon [icon]="emptyStar"></fa-icon>
+        <fa-icon [icon]="emptyStar"></fa-icon>
+      </div>
+      <div class="get-review" style="--w:{{details.review / 5 * 100}}%">
+        <fa-icon [icon]="star"></fa-icon>
+        <fa-icon [icon]="star"></fa-icon>
+        <fa-icon [icon]="star"></fa-icon>
+        <fa-icon [icon]="star"></fa-icon>
+        <fa-icon [icon]="star"></fa-icon>
+      </div>
+    </div>
+    <span *ngIf="details.review == 1">{{details.review}} star</span>
+    <span *ngIf="details.review > 1">{{details.review}} stars</span>
+    <span *ngIf="details.review == 0">no review</span>
+  </div>
+  <h3 routerLink="product" (click)="storeSinglProduct(details)">{{details.name}}</h3>
+  <h4><span>{{details.price - (details.price * details.disscount / 100)}}$</span> <span
+      class="line-through">{{details.price}}$</span></h4>
+
+</div>

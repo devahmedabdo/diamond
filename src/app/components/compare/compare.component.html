@@ -1,0 +1,21 @@
+<div class="compare" id="compare" [ngClass]="{active: compare.length > 1}">
+  <button></button>
+  <table>
+    <button (click)="removeActive()">x</button>
+    <tr>
+      <td>image</td>
+      <td>price</td>
+      <td>review</td>
+      <td>seller</td>
+      <td>remove</td>
+    </tr>
+    <tr *ngFor="let product of compare ; let i =index">
+      <td> <img [src]="product.image1" alt=""></td>
+      <td>{{product.price - (product.price * product.disscount / 100)}}</td>
+      <td>{{product.review}}</td>
+      <td>{{product.seller}}</td>
+      <td><button (click)="compare.splice(i,1);storeProduct(product,'compare')">Remove</button></td>
+    </tr>
+  </table>
+
+</div>

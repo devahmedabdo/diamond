@@ -1,0 +1,8 @@
+<div>
+  <button routerLink=""><fa-icon [icon]="home"></fa-icon></button>
+  <ng-container *ngFor="let rout of routes">
+    <button *ngIf="rout.rout" [routerLink]="rout.rout"><span> / </span><span>{{rout.name}}</span></button>
+    <button *ngIf="!rout.rout"><span> / </span><span>{{rout.name}}</span></button>
+  </ng-container>
+
+</div>

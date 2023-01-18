@@ -1,0 +1,24 @@
+section {
+  @apply pt-6;
+  .container {
+    @apply pt-10 bg-zinc-50;
+    div {
+      &:first-child {
+        @apply w-full max-w-md;
+        img {
+          @apply rounded-lg;
+        }
+        > img {
+          @apply w-full h-80 object-cover;
+        }
+        > div {
+          @apply flex justify-between mt-3;
+          > img {
+            @apply cursor-pointer;
+            width: calc(25% - 5px);
+          }
+        }
+      }
+    }
+  }
+}

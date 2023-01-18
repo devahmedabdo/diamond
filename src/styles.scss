@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./animation.scss" as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    body {
+      @apply bg-white bg-opacity-40 text-zinc-800 pt-20;
+      font-family: Poppins;
+    }
+  }
+}
+@layer utilities {
+  .container {
+    @apply mx-auto;
+    @media (min-width: 768px) {
+      max-width: 1200px;
+    }
+  }
+}
+@layer components {
+  .title {
+    @apply pt-24 text-center;
+    > h2 {
+      @apply relative text-3xl font-bold px-5 w-fit  mx-auto duration-300;
+      // &::after,
+      // &::before {
+      //   content: "";
+      //   background: url(assets/titleImg2.png) center center no-repeat;
+      //   filter: saturate(0.5);
+      //   @apply w-12 h-12 absolute top-1/2 -translate-y-1/2 bg-cover duration-300;
+      //   @media (max-width: 430px) {
+      //     @apply hidden;
+      //   }
+      // }
+      // &::after {
+      //   @apply left-full;
+      //   --tw-scale-x: -1;
+      // }
+      // &::before {
+      //   @apply right-full;
+      // }
+    }
+    p {
+      @apply py-2 text-zinc-400;
+    }
+    &:hover {
+      h2 {
+        @apply text-orange-500;
+        &::after,
+        &::before {
+          filter: saturate(1);
+        }
+      }
+    }
+  }
+  .shop-btn {
+    @apply py-2 px-5 bg-cyan-900 hover:bg-orange-400 text-white duration-300 uppercase;
+  }
+}
