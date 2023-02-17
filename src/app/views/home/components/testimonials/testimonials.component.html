@@ -1,0 +1,61 @@
+<div class="testimonials py-10 bg-zinc-50">
+  <div style="--swiper-theme-color: #f97316;" class="container relative py-10">
+    <div class="title pt-0 pb-5">
+      <h2 class="dReveal">testomonials</h2>
+      <p class="uReveal">what they say ?</p>
+    </div>
+    <swiper [config]="swiperConfig">
+      <ng-template swiperSlide *ngFor="let user of users ; let i =index ">
+        <div class="flex flex-col items-center gap-3 testimonial-box">
+          <img class="w-28 h-28 rounded-full relative -top-5 opacity-0 duration-700" [src]="user.img"
+            [alt]="user.firstName+' '+user.firstName+' image' ">
+          <p class="max-w-3xl text-center relative top-5 opacity-0 duration-700 p-5">{{user.opinion}}</p>
+          <div class="text-center">
+            <div class="text-orange-400">
+              <fa-icon *ngFor="let stars of returnarr(user.rate);let i =index"
+                style="--d:{{i}} ; transition-delay: calc(var(--d) * 0.1s);"
+                class="px-1 relative top-5 opacity-0 duration-700" [icon]="star"></fa-icon>
+            </div>
+            <h5 class="font-bold text-zinc-800 capitalize relative top-5 opacity-0 duration-700">{{user.firstName}}
+              {{user.lastName}}</h5>
+          </div>
+        </div>
+      </ng-template>
+      <!-- <ng-template swiperSlide>
+        <div data-history="1">Slide 1</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="Slide 2">Slide 2</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="3">Slide 3</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="Slide 4">Slide 4</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="5">Slide 5</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="Slide 6">Slide 6</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="7">Slide 7</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="Slide 8">Slide 8</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="9">Slide 9</div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div data-history="Slide 10">Slide 10</div>
+      </ng-template> -->
+    </swiper>
+    <div class="swiper-pagination"></div>
+    <div class="mx-auto w-72 relative text-xl">
+      <fa-icon [icon]="left" class="swiper-button-prev"></fa-icon>
+      <fa-icon [icon]="right" class="swiper-button-next"></fa-icon>
+    </div>
+  </div>
+</div>

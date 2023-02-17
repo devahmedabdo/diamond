@@ -1,0 +1,15 @@
+<section class="trend-product">
+  <div class="container">
+    <div class="title">
+      <h2>Trending Products</h2>
+      <p>Our most trending products</p>
+    </div>
+    <div class="products px-2">
+      <swiper [config]="productConfig">
+        <ng-template swiperSlide *ngFor="let product of trendingProducts">
+          <app-product [details]="product"></app-product>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</section>

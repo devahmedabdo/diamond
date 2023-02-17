@@ -1,0 +1,33 @@
+.categories {
+  .category {
+    &:hover {
+      > div {
+        @apply opacity-60;
+      }
+    }
+    > div {
+      @apply max-w-xs w-full h-96 relative rounded-sm overflow-hidden duration-300 hover:opacity-100;
+      img {
+        @apply h-full w-full object-cover;
+        transition: 1s;
+      }
+      span {
+        @apply z-10 absolute bottom-10 opacity-0 duration-500 text-white left-1/2 -translate-x-1/2;
+      }
+      button {
+        @apply w-full h-full absolute top-0 left-0 duration-500 opacity-0 capitalize font-semibold text-2xl text-white pt-20;
+      }
+      &:hover {
+        img {
+          @apply scale-125;
+        }
+        span {
+          @apply bottom-5 opacity-100;
+        }
+        button {
+          @apply bg-opacity-40 pt-0 opacity-100 bg-black;
+        }
+      }
+    }
+  }
+}

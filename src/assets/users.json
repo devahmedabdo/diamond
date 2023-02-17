@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "firstName": "ahmed",
+      "lastName": "abdo",
+      "img": "assets/users/user (1).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 5,
+      "opinion": "Montluc claim to offer the finest diamond jewellery you can buy direct from the maker. I did my research, compared specifications with some of the big brands and now I will never walk into a store again."
+    },
+    {
+      "firstName": "salma",
+      "lastName": "doe",
+      "img": "assets/users/user (2).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 4,
+      "opinion": "These are the most beautiful cabinets!! So well made. The contractor installing them said they’re some of the best he’s ever seen. Everyone that sees them wants to know where I bought them."
+    },
+    {
+      "firstName": "yomna",
+      "lastName": "saleh",
+      "img": "assets/users/user (3).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 1,
+      "opinion": "We carry Wellsford Cabinetry among several others for our kitchen design and remodel services. Wellsford has the best quality I have seen, with fair pricing and excellent, excellent customer service. They are my “go to” line."
+    },
+    {
+      "firstName": "lindsy",
+      "lastName": "nilmos",
+      "img": "assets/users/user (4).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 4,
+      "opinion": "Montluc claim to offer the finest diamond jewellery you can buy direct from the maker. I did my research, compared specifications with some of the big brands and now I will never walk into a store again."
+    },
+    {
+      "firstName": "sandy",
+      "lastName": "jay",
+      "img": "assets/users/user (5).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 2,
+      "opinion": "ipsum dolor sit amet consectetur adipisicing elit. Tempora in earum quidem animi sit rem maxime at sunt iusto, cumque nihil rerum neque natus. Quia commodi itaque deleniti sequi dolores."
+    },
+    {
+      "firstName": "sara",
+      "lastName": "tankrede",
+      "img": "assets/users/user (6).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 3,
+      "opinion": "e ipsum dolor sit amet consectetur adipisicing elit. Tempora in earum quidem animi sit rem maxime at sunt iusto, cumque nihil rerum neque natus. Quia commodi itaque deleniti sequi dolores."
+    },
+    {
+      "firstName": "elethabith",
+      "lastName": "youns",
+      "img": "assets/users/user (7).webp",
+      "email": "ola@gmail.com",
+      "password": "23r23rsef",
+      "phone": "+2937882",
+      "country": "Egypt",
+      "governate": "Bhera",
+      "city": "delengat",
+      "street": "teba",
+      "rate": 0,
+      "opinion": ""
+    }
+  ],
+  "limit": 10
+}

@@ -1,0 +1,52 @@
+<div class="subscribe">
+  <div class=" ">
+    <div class="title max-w-2xl mx-auto my-10">
+      <h2 class="dReveal">Get Our Latest Update</h2>
+      <p class="dReveal">Sign up to our newsletter for information on sales, delightful content and new additions to the
+        collection.</p>
+    </div>
+    <form class="max-w-2xl mx-auto px-1" [formGroup]="subscribeForm" (ngSubmit)="log(subscribeForm)">
+      <div class="dReveal border flex justify-between  duration-300 bg-zinc-100 hover:border-orange-500">
+        <input type="email" placeholder="Enter Your Email" formControlName="email">
+        <button class="flex items-center w-40 px-2 border-l " type="submit">
+          <lord-icon style="margin: 0%;" class="h-10 mx-auto w-10 m-0" colors="primary:#3f3f46" trigger="loop"
+            delay="1500" src="assets/lordicons/bell.json"></lord-icon>
+          <span>Subscribe</span>
+        </button>
+      </div>
+      <div class="dReveal flex justify-center gap-3 mt-10">
+        <label [ngClass]="{active:subscribeForm.controls.policyAgreement.value}" class="flex gap-2 items-center"
+          for="policyAgreement">
+          <div class="w-4 border h-4 rounded-sm">
+            <div class="h-full w-full scale-0 duration-150 rounded-sm bg-orange-500">
+            </div>
+          </div>
+          <span class="capitalize">I Agree To The <span routerLink="policy"
+              class="hover:text-orange-500 duration-200 cursor-pointer">Privacy
+              Policy.</span></span>
+        </label>
+        <input hidden id="policyAgreement" type="checkbox" formControlName="policyAgreement">
+      </div>
+      <div class="error h-12 my-5 capitalize text-red-400">
+        <div *ngIf="invalidSubscribe" class=" mx-auto text-center ">
+          <p [ngClass]="{active:subscribeForm.controls.email.errors?.['required']}">* email is
+            required</p>
+          <p [ngClass]="{active: subscribeForm.controls.email.errors?.['email']}">* please enter a
+            valid
+            email</p>
+          <p [ngClass]="{active: subscribeForm.controls.policyAgreement.invalid}">*
+            Please agree
+            to the privacy terms</p>
+          <!-- <p *ngIf="subscribeForm.controls.email.errors?.['required']">email is
+            required</p>
+          <p *ngIf=" subscribeForm.controls.email.errors?.['email']">please enter a
+            valid
+            email</p>
+          <p *ngIf=" subscribeForm.controls.policyAgreement.invalid">
+            Please agree
+            to the privacy terms</p> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

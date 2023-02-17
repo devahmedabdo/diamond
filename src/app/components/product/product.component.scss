@@ -123,6 +123,10 @@
   }
   h3 {
     @apply font-semibold text-zinc-700 hover:text-orange-400 cursor-pointer duration-300;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   h4 {
     @apply flex justify-between font-bold py-2;

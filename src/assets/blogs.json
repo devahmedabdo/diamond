@@ -1,0 +1,54 @@
+{
+  "blogs": [
+    {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+      "writer": "Ahmed Abdo",
+      "date": "21-12-2020",
+      "title": "Diamond Arrives at the New Paris Flagship Store",
+      "img": "assets/blogs/blog (1).webp",
+      "id": 1233123
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+      "writer": "Ahmed Abdo",
+      "date": "21-12-2020",
+      "title": "Engagement Rings – a Buyer’s Guide",
+      "img": "assets/blogs/blog (2).webp",
+      "id": 1233123
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+      "writer": "Ahmed Abdo",
+      "date": "21-12-2020",
+      "title": "Comment connaître sa taille de doigts ?",
+      "img": "assets/blogs/blog (3).webp",
+      "id": 1233123
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+      "writer": "Ahmed Abdo",
+      "date": "21-12-2020",
+      "title": "Diamond Arrives at the New Paris Flagship Store",
+      "img": "assets/blogs/blog (4).webp",
+      "id": 1233123
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+      "writer": "Ahmed Abdo",
+      "date": "21-12-2020",
+      "title": "Diamond Arrives at the New Paris Flagship Store",
+      "img": "assets/blogs/blog (5).webp",
+      "id": 1233123
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+      "writer": "Ahmed Abdo",
+      "date": "21-12-2020",
+      "title": "Diamond Arrives at the New Paris Flagship Store",
+      "img": "assets/blogs/blog (6).webp",
+      "id": 1233123
+    }
+  ],
+  "total": 10,
+  "limit": 10
+}

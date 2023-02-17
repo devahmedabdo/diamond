@@ -1,0 +1,27 @@
+.subscribe {
+  form {
+    [type="email"] {
+      all: unset;
+      padding: 16px;
+      width: 100%;
+    }
+    label {
+      &.active {
+        > div {
+          > div {
+            --tw-scale-x: 0.8;
+            --tw-scale-y: 0.8;
+          }
+        }
+      }
+    }
+    .error {
+      p {
+        @apply overflow-hidden opacity-0 duration-300 h-0;
+        &.active {
+          @apply w-full opacity-100 h-6;
+        }
+      }
+    }
+  }
+}

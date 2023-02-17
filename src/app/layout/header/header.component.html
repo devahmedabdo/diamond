@@ -1,9 +1,9 @@
 <header>
   <div class="container">
-    <div class="logo "><a href=""><img src="assets/logo.svg" alt="diamond logo">
+    <div class="logo "><a href=""><img src="assets/main-img/logo.svg" alt="diamond logo">
       </a></div>
     <nav>
-      <ul>
+      <ul [ngClass]="{active:activeMenu}">
         <li><a routerLink="/">Home</a>
           <ul>
             <li><a href="">Home1</a></li>
@@ -50,7 +50,7 @@
       </ul>
     </nav>
     <div class="icons">
-      <div class="search-icon" (click)="changeActive([searchBox,searchBtn])">
+      <div [ngClass]="{active:activeSearch}" class="search-icon" (click)="reflectActiveSearch()">
         <fa-icon [icon]="search"></fa-icon>
       </div>
       <div routerLink="favourite">
@@ -67,15 +67,15 @@
           <span *ngIf="cartItems.length <= 9">{{cartItems.length}}</span>
         </div>
       </div>
-      <div class="user-icon" (click)="changeActive([userBox,userBtn])">
+      <div [ngClass]="{active:activeUserMenu}" class="user-icon" (click)="reflectActiveUserMenu()">
         <fa-icon [icon]="user"></fa-icon>
       </div>
     </div>
-    <div class="user-box">
-      <button (click)="changeActive([userBtn,userBox])"></button>
+    <div [ngClass]="{active:activeUserMenu}" class="user-box">
+      <button (click)="reflectActiveUserMenu()"></button>
       <div>
         <div style="--d:2 " class="user-information">
-          <img src="../../../assets/profile.jpg" alt="">
+          <img src="../../../assets/main-img/profile.jpg" alt="">
           <div class="loged" *ngIf="loged">
             <span>Hi !</span>
             <h3>Ahmed </h3>
@@ -95,8 +95,8 @@
         </div>
       </div>
     </div>
-    <div class="search-box">
-      <button (click)="changeActive([searchBox,searchBtn])">
+    <div [ngClass]="{active:activeSearch}" class="search-box">
+      <button (click)="reflectActiveSearch()">
 
       </button>
       <div>
@@ -106,7 +106,7 @@
         </form>
       </div>
     </div>
-    <div class="menu-icon" (click)="changeActive([menuBox,menuBtn])">
+    <div class="menu-icon" [ngClass]="{active:activeMenu}" (click)="reflectActiveMenu()">
       <span></span>
       <span></span>
       <span></span>

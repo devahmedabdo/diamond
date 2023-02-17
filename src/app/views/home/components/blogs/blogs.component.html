@@ -1,0 +1,24 @@
+<div class="blogs">
+  <div class="container">
+    <div class="title">
+      <h2 class="dReveal">latest blog</h2>
+      <p class="dReveal">Check our latest blog</p>
+    </div>
+    <div class="latest-blogs py-10">
+      <swiper [config]="blogConfig">
+        <ng-template swiperSlide *ngFor="let blog of blogs;let i =index">
+          <div class="blog max-w-sm dReveal text-center mx-auto p-3 pb-5 hover:bg-zinc-50" style="--d:{{i}}">
+            <img class="w-full h-48 object-cover " [src]="blog.img" alt="blog image">
+            <div class="py-3 "><button class="text-zinc-500 hover:text-orange-400 duration-300">{{blog.date}}</button>
+              By <button class="text-zinc-500 hover:text-orange-400 duration-300">{{blog.writer}}</button>
+            </div>
+            <h4 class="overflow-hidden font-bold text-xl text-zinc-600 mb-2 hover:text-orange-400 duration-300"><a
+                href="">{{blog.title}}</a></h4>
+            <p class="overflow-hidden">{{blog.description}}</p>
+            <button class="shop-btn mx-auto block mt-3">view more</button>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>

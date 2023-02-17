@@ -1,0 +1,25 @@
+{
+  "sponsers": [
+    {
+      "name": "Kingcrown",
+      "img": "assets/sponsers/sponser (1).webp"
+    },
+    {
+      "name": "Luxury",
+      "img": "assets/sponsers/sponser (2).webp"
+    },
+    {
+      "name": "Crown",
+      "img": "assets/sponsers/sponser (3).webp"
+    },
+    {
+      "name": "Berlains",
+      "img": "assets/sponsers/sponser (4).webp"
+    },
+    {
+      "name": "Wonder",
+      "img": "assets/sponsers/sponser (5).webp"
+    }
+  ],
+  "total": 10
+}

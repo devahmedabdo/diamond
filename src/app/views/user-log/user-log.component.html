@@ -1,0 +1,11 @@
+<div class="login py-20">
+  login form
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <input (focus)="changeLoginStatus(false)" formControlName="email" type="email" placeholder="enter your email">
+    <input (focus)="changeLoginStatus(false)" formControlName="password" type="password">
+    <input type="submit">
+  </form>
+  <div [ngClass]="{active:loginInvalid}" class="error translate-y-3 opacity-0 duration-500">
+    Please check your email or pass
+  </div>
+</div>

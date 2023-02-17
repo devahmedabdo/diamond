@@ -1,0 +1,11 @@
+<div class="sponsers my-10">
+  <swiper [config]="sponsersConfig">
+    <ng-template *ngFor="let sponser of sponsers" swiperSlide>
+      <div class="w-32 h-32 mx-auto text-center grayscale opacity-60 duration-300 hover:grayscale-0 hover:opacity-100"
+        [title]="sponser.name">
+        <img [src]="sponser.img" [alt]="sponser.name + ' Logo'">
+        <span class="relative text-sm opacity-0 duration-300 -top-5">{{sponser.name}}</span>
+      </div>
+    </ng-template>
+  </swiper>
+</div>

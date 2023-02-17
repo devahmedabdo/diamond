@@ -1,9 +1,9 @@
-<section>
+<section class="single-product">
   <div>
     <app-navigator></app-navigator>
   </div>
   <div class="container">
-    <div>
+    <!-- <div>
       <img [src]="productInfo.image1" alt="{{productInfo.name + ' Image'}}">
       <div>
         <img (mouseover)="changeSrc($event.target)" [src]="productInfo.image1" alt="{{productInfo.name + ' Image 1'}}">
@@ -11,7 +11,9 @@
         <img (mouseover)="changeSrc($event.target)" [src]="productInfo.image3" alt="{{productInfo.name + ' Image 3'}}">
         <img (mouseover)="changeSrc($event.target)" [src]="productInfo.image4" alt="{{productInfo.name + ' Image 4'}}">
       </div>
+    </div> -->
+    <div>
+      <app-singl-product-swiper [productInfo]="productInfo"></app-singl-product-swiper>
     </div>
-
   </div>
 </section>

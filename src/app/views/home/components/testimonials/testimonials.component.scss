@@ -1,0 +1,34 @@
+.testimonials {
+  .swiper {
+    @apply py-8;
+  }
+  .swiper-slide.swiper-slide-visible.swiper-slide-active {
+    > div {
+      * {
+        @apply top-0 opacity-100;
+      }
+    }
+  }
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after,
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    display: none;
+  }
+  .testimonial-box {
+    > p {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        background: url("../../../../../assets/main-img/opinion.png") center
+          center no-repeat;
+        background-size: 160px;
+        position: absolute;
+        opacity: 0.1;
+      }
+    }
+  }
+}

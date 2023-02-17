@@ -26,7 +26,29 @@ export class HeaderComponent implements OnInit {
   search = faSearch;
   user = faUser;
   //////////
+  activeMenu: boolean = false;
+  activeSearch: boolean = false;
+  activeUserMenu: boolean = false;
+
+  reflectActiveMenu() {
+    this.activeMenu = !this.activeMenu;
+    this.activeUserMenu = false;
+    this.activeSearch = false;
+  }
+  reflectActiveUserMenu() {
+    this.activeMenu = false;
+    this.activeUserMenu = !this.activeUserMenu;
+    this.activeSearch = false;
+  }
+  reflectActiveSearch() {
+    this.activeMenu = false;
+    this.activeUserMenu = false;
+    this.activeSearch = !this.activeSearch;
+  }
+
+  //////////
   loged = false;
+
   currency: string = 'usa';
   setCurrency(currency: string) {
     this.currency = currency;
@@ -36,12 +58,6 @@ export class HeaderComponent implements OnInit {
   ////////
   lovedItems: any[] = [];
   cartItems: any[] = [];
-  menuBox?: HTMLElement;
-  menuBtn?: HTMLElement;
-  searchBtn?: HTMLElement;
-  searchBox?: HTMLElement;
-  userBtn?: HTMLElement;
-  userBox?: HTMLElement;
 
   changeActive(arr: any, active?: any) {
     arr.forEach((e: HTMLElement) => {
@@ -61,15 +77,6 @@ export class HeaderComponent implements OnInit {
     this.cartItems = cart;
   }
   async ngOnInit() {
-    this.menuBox = document.querySelector('header nav > ul') as HTMLElement;
-    this.menuBtn = document.querySelector('header .menu-icon') as HTMLElement;
-    this.searchBtn = document.querySelector('.search-icon') as HTMLElement;
-    this.searchBox = document.querySelector(
-      'header .search-box'
-    ) as HTMLElement;
-    this.userBtn = document.querySelector('.user-icon') as HTMLElement;
-    this.userBox = document.querySelector('header .user-box') as HTMLElement;
-    // console.log(this.cs.cartLength);
     this.getStored();
   }
 }

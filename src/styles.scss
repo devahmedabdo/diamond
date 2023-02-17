@@ -22,7 +22,7 @@
 }
 @layer components {
   .title {
-    @apply pt-24 text-center;
+    @apply pt-24 text-center capitalize;
     > h2 {
       @apply relative text-3xl font-bold px-5 w-fit  mx-auto duration-300;
       // &::after,

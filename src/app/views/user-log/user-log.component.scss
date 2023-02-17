@@ -1,0 +1,5 @@
+.error{
+  &.active{
+    @apply translate-y-0 opacity-100
+  }
+}

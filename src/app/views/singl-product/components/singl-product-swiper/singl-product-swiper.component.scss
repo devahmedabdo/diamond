@@ -1,0 +1,12 @@
+@import "~swiper/css";
+// @import "~swiper/css/free-mode";
+@import "~swiper/css/navigation";
+@import "~swiper/css/thumbs";
+img {
+  @apply rounded-md object-cover h-full;
+}
+span {
+  background: white;
+  width: 100px;
+  display: block;
+}

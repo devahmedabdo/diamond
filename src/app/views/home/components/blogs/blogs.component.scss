@@ -1,0 +1,15 @@
+.latest-blogs {
+  .blog {
+    h4,
+    p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+    h4 {
+      -webkit-line-clamp: 1;
+    }
+    p {
+      -webkit-line-clamp: 3;
+    }
+  }
+}

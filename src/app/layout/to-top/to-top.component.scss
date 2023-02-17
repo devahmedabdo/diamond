@@ -8,20 +8,11 @@
       background: linear-gradient(288deg, white, transparent);
     }
     svg {
-      @apply absolute stroke-orange-400 z-10 fill-none;
+      @apply absolute stroke-orange-400 z-10 fill-none overflow-visible duration-300;
       stroke-width: 6px;
       stroke-dasharray: 310;
       stroke-dashoffset: var(--progress);
       stroke-linecap: round;
-    }
-    &:hover {
-      @apply bg-orange-500 text-orange-50;
-      &::after {
-        @apply translate-x-full;
-      }
-      svg {
-        @apply stroke-orange-900;
-      }
     }
   }
   div {
@@ -30,9 +21,17 @@
     transform: scaleY(0.1);
     filter: blur(10px);
   }
-  &:hover {
+  &:hover,
+  &.active {
     button {
-      @apply -translate-y-1;
+      @apply -translate-y-1 bg-orange-500 text-orange-50;
+      &::after {
+        @apply translate-x-full;
+      }
+      svg {
+        @apply stroke-orange-50;
+        transform: scale(0.85);
+      }
     }
     div {
       @apply opacity-50;

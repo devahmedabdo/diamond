@@ -1,0 +1,12 @@
+.sponsers {
+  .swiper {
+    @apply py-10;
+  }
+  div {
+    &:hover {
+      span {
+        @apply top-0 opacity-100;
+      }
+    }
+  }
+}

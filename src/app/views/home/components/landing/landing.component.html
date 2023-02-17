@@ -1,0 +1,51 @@
+<div class="landing">
+  <div class="container">
+    <swiper class="swiper" [config]="swiperConfig">
+      <ng-template swiperSlide *ngFor="let slide of slides ; let i = index">
+        <div class="slide-box {{'slide'+i}}" [style]="slide.position">
+          <div class="slide-description">
+            <h1>
+              <span *ngFor="let letter of slide.title ;let i= index" style="--d:{{i}}">{{letter+ " "}}</span>
+            </h1>
+            <p>{{slide.describe}}</p>
+            <button routerLink="{{slide.routerLink}}">{{slide.buttonText}}</button>
+          </div>
+          <div class="slide-image">
+            <div>
+              <img style="--d:{{i}}" (mouseover)="setSrc($event.target)"
+                *ngFor="let img of slide.imagesBox.path ;let i = index" [src]="img" alt="lady img">
+            </div>
+            <img [src]="slide.image" alt="">
+            <!-- <img *ngFor="let img of slide.imagesBox.path" src="{{img}}" alt=""> -->
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+    <!-- <div class="swiper-pagination"></div> -->
+  </div>
+</div>
+<!-- <div class="landing">
+  <div class="container">
+    <swiper class="swiper" [config]="swiperConfig">
+      <ng-template swiperSlide *ngFor="let slide of slides ; let i = index">
+        <div class="slide-box {{'slide'+i}}" [style]="slide.position">
+          <div class="slide-description">
+            <h1>
+              <span *ngFor="let letter of slide.title ;let i= index" style="--d:{{i}}">{{letter}}</span>
+            </h1>
+            <p>{{slide.describe}}</p>
+            <button routerLink="{{slide.routerLink}}">{{slide.buttonText}}</button>
+          </div>
+          <div class="slide-image">
+            <div>
+              <img style="--d:{{i}}" (mouseover)="setSrc($event.target)"
+                *ngFor="let img of slide.imagesBox.path ;let i = index" [src]="img" alt="lady img">
+            </div>
+            <img src="{{slide.image}}" alt="">
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+    <div class="swiper-pagination"></div>
+  </div>
+</div> -->

@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="type">
-    <span *ngFor="let type of details.type">{{type}}</span>
+    <span *ngFor="let type of details.tags">{{type}}</span>
   </div>
   <div class="review">
     <div class="review-star">
@@ -44,8 +44,7 @@
     <span *ngIf="details.review > 1">{{details.review}} stars</span>
     <span *ngIf="details.review == 0">no review</span>
   </div>
-  <h3 routerLink="product" (click)="storeSinglProduct(details)">{{details.name}}</h3>
+  <h3 (click)="storeSinglProduct(details)">{{details.name}}</h3>
   <h4><span>{{details.price - (details.price * details.disscount / 100)}}$</span> <span
       class="line-through">{{details.price}}$</span></h4>
-
 </div>
