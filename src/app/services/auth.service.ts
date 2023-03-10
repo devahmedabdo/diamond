@@ -13,7 +13,16 @@ export class AuthService {
   signup(data: any) {
     return this.http.post(apiUrl + 'signup', data);
   }
+  addImage(data: any) {
+    return this.http.post(apiUrl + 'writerImg', data);
+  }
   logout() {
     return this.http.delete(apiUrl + 'logout');
+  }
+  logoutAll() {
+    return this.http.delete(apiUrl + 'logoutAll');
+  }
+  checkEmail(email: any) {
+    return this.http.post(apiUrl + 'email', email);
   }
 }

@@ -1,0 +1,38 @@
+<hr *ngIf="parent.reply == 1">
+<div [ngClass]="{'active':!hide ,'nested':parent.reply > 1,'direct-nested':parent.reply == 2  }"
+  class="flex gap-1   py-3 comment-owner ">
+  <img [ngClass]="{'w-10 h-10 ':parent.reply > 1,'w-20 h-20':parent.reply == 1 }" [src]="comment.img"
+    class=" rounded-full aspect-square object-cover commenter " alt="">
+  <div class="flex flex-col gap-2 items-start cursor-pointer">
+    <div [ngClass]="{'hide':hide }" (click)="this.hide= false" class="bg-zinc-100 rounded-md p-3 comment-data">
+      <span class="md:text-xl font-bold text-sm capitalize">{{comment.owner}}</span>
+      <p class="text-xs md:text-base">{{comment.comment}}</p>
+    </div>
+    <span *ngIf="!hide">{{comment.date}}</span>
+    <div *ngIf="comment.replies.length > 0">
+      <!-- <hr> -->
+      <span (click)="viewReplies()" *ngIf="hide">View More Replies</span>
+      <ng-container *ngIf="!hide"><app-comment (addCommentEvent)="addReply($event)"
+          [parent]="{id:comment.id,reply:parent.reply + 1}" [user]="user" class="reply"
+          *ngFor="let subComment of commentReplayes" [comment]="subComment" [hide]="hideAllReplies"></app-comment>
+        <span *ngIf=" commentReplayes.length == 3 && comment.replies.length > 3" (click)="viewReplies()"
+          class="font-medium">View More {{comment.replies.length - 3}} Replies</span>
+      </ng-container>
+    </div>
+    <div *ngIf="!hide" class="flex gap-2 items-center border border-dotted border-zinc-200 p-1 rounded-full">
+      <img class="w-10 h-10 aspect-square  object-cover rounded-full reply"
+        [src]="'data:image/png;base64,'+user?.avatar" alt="">
+      <form [formGroup]="addReplyForm" class="flex items-center"
+        (ngSubmit)="addComment(addReplyForm.value,commentField)">
+        <input #commentField type="text" class="w-full focus:outline-none text-xs p-3 " placeholder="Reply........."
+          formControlName="comment">
+        <button type="submit" [disabled]="addReplyForm.invalid && addReplyForm.touched"
+          class="duration-300 disabled:grayscale">
+          <fa-icon
+            class="aspect-square w-7 h-7 flex justify-center items-center rounded-full bg-orange-400 text-orange-50"
+            [icon]="replyIcon"></fa-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

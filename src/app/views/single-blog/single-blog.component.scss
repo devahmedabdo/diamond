@@ -1,0 +1,14 @@
+hr {
+  @apply border-zinc-300;
+}
+.error {
+  &.active {
+    @apply opacity-100 top-0;
+  }
+}
+
+// app-comment {
+//   margin: 35px 0px;
+//   display: block;
+//   border: solid 1px red;
+// }

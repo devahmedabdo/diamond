@@ -1,0 +1,5 @@
+<h3 class="side-title pb-5">Categories</h3>
+<div *ngFor="let category of categories" class="flex justify-between items-center py-1">
+  <span routerLink="/re"
+    class="hover:text-orange-400 duration-300 capitalize cursor-pointer">{{category.name}}</span><span>({{category.number}})</span>
+</div>

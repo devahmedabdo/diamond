@@ -1,0 +1,15 @@
+<h3 class="side-title pb-5" *ngIf="recentBlogs">Recent Blogs</h3>
+<h3 class="side-title pb-5" *ngIf="recentProducts">Recent Products</h3>
+<ng-container *ngIf="recentBlogs">
+  <div *ngFor="let blog of recentBlogs" class=" box ">
+    <div>
+      <img [src]="blog.img" alt="blog image">
+    </div>
+    <div>
+      <span>{{blog.date}}</span>
+      <h4 routerLink="blog:{{blog.id}}">{{blog.title}}
+      </h4>
+    </div>
+  </div>
+
+</ng-container>

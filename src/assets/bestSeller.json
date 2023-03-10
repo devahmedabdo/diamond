@@ -2,8 +2,8 @@
   "products": [
     {
       "name": "Aerodynamic Wooden Hat",
-      "price": 213,
-      "disscount": 20,
+      "price": 90,
+      "disscount": 10,
       "stock": 30,
       "image1": "assets/product/product-1 (1).jpg",
       "image2": "assets/product/product-1 (2).jpg",
@@ -31,7 +31,7 @@
     {
       "name": "Heavy Duty Steel Wallet",
       "price": 340,
-      "disscount": 20,
+      "disscount": 50,
       "stock": 30,
       "image1": "assets/product/7.1.jpg",
       "image2": "assets/product/8.1.jpg",
@@ -59,7 +59,7 @@
     {
       "name": "Elara Diamond Ring",
       "price": 100,
-      "disscount": 10,
+      "disscount": 0,
       "stock": 30,
       "image1": "../../../assets/product/9.1.jpg",
       "image2": "../../../assets/product/6.1.jpg",

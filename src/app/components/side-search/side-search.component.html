@@ -1,0 +1,8 @@
+<h3 class="side-title">Search</h3>
+<form (ngSubmit)="searchByKeys(searchForm.value)" [formGroup]="searchForm" action=""
+  class="my-2 flex justify-between bg-zinc-100 w-full">
+  <input type="text" class="w-full p-3" placeholder="Search....." formControlName="keys">
+  <button [ngClass]="{active:searchForm.valid}"
+    class="z-0 p-3 overflow-hidden relative w-14 aspect-square hover:text-orange-400 duration-300 border-l border-zinc-50"
+    type="submit"><fa-icon [icon]="search"></fa-icon></button>
+</form>

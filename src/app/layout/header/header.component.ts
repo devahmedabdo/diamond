@@ -1,12 +1,17 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faEdit, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { CartService } from './../../services/cart.service';
 import {
   faCartShopping,
+  faDashboard,
   faSearch,
   faUser,
+  faUserEdit,
+  faUserSecret,
 } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
+import { User } from 'src/app/interfaces/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +21,10 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   clickEventSubscribtion: Subscription;
-  constructor(private cartService: CartService) {
+  constructor(
+    private cartService: CartService,
+    private userServices: UserService
+  ) {
     this.clickEventSubscribtion = this.cartService.getItems().subscribe(() => {
       this.getStored();
     });
@@ -25,6 +33,10 @@ export class HeaderComponent implements OnInit {
   cart = faCartShopping;
   search = faSearch;
   user = faUser;
+  dashboard = faDashboard;
+  dashboard2 = faEdit;
+  dashboard3 = faUserEdit;
+  dashboard4 = faUserSecret;
   //////////
   activeMenu: boolean = false;
   activeSearch: boolean = false;
@@ -53,30 +65,36 @@ export class HeaderComponent implements OnInit {
   setCurrency(currency: string) {
     this.currency = currency;
   }
-  /////////
 
   ////////
   lovedItems: any[] = [];
   cartItems: any[] = [];
+  profile?: User;
+  userNews: any;
 
-  changeActive(arr: any, active?: any) {
-    arr.forEach((e: HTMLElement) => {
-      // console.log(e);
-      if (e.classList.contains('active')) {
-        return e.classList.remove('active');
-      }
-      e.classList.add('active');
-    });
-  }
-  async getStored() {
-    let favourite = await JSON.parse(
+  getStored() {
+    let favourite = JSON.parse(
       window.localStorage.getItem('favourite') || '[]'
     );
-    let cart = await JSON.parse(window.localStorage.getItem('cart') || '[]');
+    let cart = JSON.parse(window.localStorage.getItem('cart') || '[]');
     this.lovedItems = favourite;
     this.cartItems = cart;
   }
-  async ngOnInit() {
+  logout() {
+    console.log('logout');
+  }
+  ngOnInit() {
     this.getStored();
+    this.userServices.getUserData().subscribe({
+      next: (data) => {
+        this.profile = data.profile;
+        console.log(this.profile);
+        this.userNews = data.news;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+    // console.log(this.profile?.avatar);
   }
 }

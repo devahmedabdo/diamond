@@ -11,7 +11,17 @@ import { StorageService } from './../../services/storage.service';
 export class SinglProductComponent implements OnInit {
   constructor(private storage: StorageService) {}
   productInfo!: Product;
+  routes: any[] = [
+    {
+      name: 'products',
+      rout: '/products',
+    },
+    {
+      name: '',
+    },
+  ];
   ngOnInit() {
     this.productInfo = this.storage.getStoredItem('singlProduct');
+    console.log(this.productInfo);
   }
 }

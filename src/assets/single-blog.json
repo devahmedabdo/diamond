@@ -1,0 +1,121 @@
+{
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Odio facilisis mauris sit amet massa vitae tortor condimentum lacinia. Malesuada fames ac turpis egestas integer eget. “ Maecenas […]",
+  "writer": "Ahmed Abdo",
+  "date": "21-12-2020",
+  "title": "Engagement Rings – a Buyer’s Guide",
+  "img": "assets/blogs/blog (2).webp",
+  "id": 1233123,
+  "content": {
+    "qoute": "Maecenas tempus, tellus eget condimentum rhoncus? Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus vitae sapien?",
+    "qouteDescription": "In causae cetero vel, ad etiam iuvaret scripserit mei, nam in putant interesset. Te quo veri errem liberavisse, assentior abhorreant in duo. No has commodo recteque, usu an verear disputationi. Duo eu saepe facilis moderatius. Iusto repudiandae an cum, qui nibh facete ceteros te, autem dicta pericula ad per.Feugiat nonumes gubergren vix at, tollit dissentias duo neas euismod interesset deterruisset atrum.Sea cu dolore torquatos, eos an vidit omittam eleifend, vix accusam omittantur eu. Illud platonem hendrerit duo in nam te sapientem efficiendi.",
+    "title2": "We Love chocolate",
+    "title2Description": "Eam ut aliquam vituperatoribus, quis homero consetetur pri in, te nam agam aperiam. Vis admodum dolores ut. No quod eloquentiam eam, eos in meliore accumsan assentior. Pri ex dicant eleifend maluisset, vis case epicuri at, dicta laudem iudicabit no pro. Ad illum omittam prodesset ius, mel eu iuvaret theophrastus. Tota tollit qui et. Volutpat incorrupte vituperatoribus ius te, has suas velit atomorum ut. Ne usu eius audiam hendrerit. Nec ex ignota suscipiantur, no per tempor percipit vituperatoribus. In eos dolore facilisis. Virtute meliore scribentur quo no. Pri wisi assum adversarium ne. In menandri adipisci sea, has te quod accommodare an vim atqui.",
+    "footer": "Pri wisi assum adversarium ne. In menandri adipisci sea, has te quod accommodare. An vim atqui definiebas sum adversarium. Ius vitae laoreet tincidunt at. Ea labore eligendi nam, an regione accusata rationibus cum, eum fuisset offendit ei. Vim ut case viris inimicus, enim laudem audiam cum ex. Exerci ad aeterno vim ea erant constitutam.",
+    "images": [
+      {
+        "img": "assets/blogs/blog (3).webp"
+      },
+      {
+        "img": "assets/blogs/blog (4).webp"
+      }
+    ]
+  },
+  "tags": ["Accessories", "Bracelets ", "Rings"],
+  "comments": [
+    {
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+      "date": "21-12-2020",
+      "owner": "Sayed Ali",
+      "img": "../assets/users/user (1).webp",
+      "replies": [
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Mona Ahmed",
+          "img": "../assets/users/user (2).webp",
+          "replies": [
+            {
+              "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+              "date": "21-12-2020",
+              "owner": "Ahmed Mosa",
+              "img": "../assets/users/user (1).webp",
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Mona Ahmed",
+          "img": "../assets/users/user (2).webp",
+          "replies": []
+        }
+      ]
+    },
+    {
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+      "date": "21-12-2020",
+      "owner": "Ahmed Mosa",
+      "img": "../assets/users/user (1).webp",
+      "replies": [
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Ahmed Mosa",
+          "img": "../assets/users/user (1).webp",
+          "replies": []
+        },
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Ahmed Mosa",
+          "img": "../assets/users/user (1).webp",
+          "replies": []
+        },
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Ahmed Mosa",
+          "img": "../assets/users/user (1).webp",
+          "replies": []
+        },
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Ahmed Mosa",
+          "img": "../assets/users/user (1).webp",
+          "replies": []
+        },
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Ahmed Mosa",
+          "img": "../assets/users/user (1).webp",
+          "replies": []
+        },
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Ahmed Mosa",
+          "img": "../assets/users/user (1).webp",
+          "replies": []
+        }
+      ]
+    },
+    {
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+      "date": "21-12-2020",
+      "owner": "Ahmed Abdo",
+      "img": "../assets/users/user (1).webp",
+      "replies": [
+        {
+          "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis",
+          "date": "21-12-2020",
+          "owner": "Hannon Ali",
+          "img": "../assets/users/user (5).webp",
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

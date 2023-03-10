@@ -15,14 +15,14 @@
         </button>
       </div>
       <div class="dReveal flex justify-center gap-3 mt-10">
-        <label [ngClass]="{active:subscribeForm.controls.policyAgreement.value}" class="flex gap-2 items-center"
+        <label [ngClass]="{active:subscribeForm.controls.policyAgreement.value}" class=" checkBoxLable"
           for="policyAgreement">
-          <div class="w-4 border h-4 rounded-sm">
-            <div class="h-full w-full scale-0 duration-150 rounded-sm bg-orange-500">
+          <div>
+            <div>
             </div>
           </div>
           <span class="capitalize">I Agree To The <span routerLink="policy"
-              class="hover:text-orange-500 duration-200 cursor-pointer">Privacy
+              class="hover:text-orange-500 duration-200 cursor-pointer underline">Privacy
               Policy.</span></span>
         </label>
         <input hidden id="policyAgreement" type="checkbox" formControlName="policyAgreement">

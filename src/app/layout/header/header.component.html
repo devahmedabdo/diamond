@@ -1,9 +1,10 @@
-<header>
-  <div class="container">
-    <div class="logo "><a href=""><img src="assets/main-img/logo.svg" alt="diamond logo">
+<header class="fixed z-50 top-0 left-0 w-full bg-white">
+  <div class="container  flex justify-between gap-3 text-zinc-800 items-center text-xl px-5 ">
+    <div class="logo font-extrabold text-orange-500"><a class=" w-10 block" href=""><img src="assets/main-img/logo.svg"
+          alt="diamond logo">
       </a></div>
-    <nav>
-      <ul [ngClass]="{active:activeMenu}">
+    <nav class="flex-grow">
+      <ul [ngClass]="{active:activeMenu}" class="flex justify-center text-lg">
         <li><a routerLink="/">Home</a>
           <ul>
             <li><a href="">Home1</a></li>
@@ -12,7 +13,7 @@
             <li><a href="">Home4</a></li>
           </ul>
         </li>
-        <li><a href="">Products</a>
+        <li><a routerLink="/products">Products</a>
           <ul>
             <li><a href="">Thumbnail Vertical</a></li>
             <li><a href="">Thumbnail Horizontal</a></li>
@@ -23,11 +24,11 @@
             <li><a href="">External/Affiliate Product</a></li>
           </ul>
         </li>
-        <li><a href="">Blog</a>
+        <li><a routerLink="blog">Blogs</a>
           <ul>
             <li><a href=""> Blog Grid 3 Columns</a></li>
             <li><a href="">Blog List</a></li>
-            <li><a href="">Single Post</a></li>
+            <li><a routerLink="/blogs">Single Post</a></li>
           </ul>
         </li>
         <li><a href="">Contant</a>
@@ -73,16 +74,27 @@
     </div>
     <div [ngClass]="{active:activeUserMenu}" class="user-box">
       <button (click)="reflectActiveUserMenu()"></button>
-      <div>
-        <div style="--d:2 " class="user-information">
-          <img src="../../../assets/main-img/profile.jpg" alt="">
-          <div class="loged" *ngIf="loged">
-            <span>Hi !</span>
-            <h3>Ahmed </h3>
+      <div class=" w-60 bg-orange-50 p-2 rounded-3xl  flex flex-col gap-2">
+        <div style="--d:2 " class="user-information flex items-center gap-5 justify-center flex-wrap ">
+          <img *ngIf="profile?.avatar == undefined || !profile" src="assets/main-img/profile.jpg" alt="User Avatar">
+          <img *ngIf="profile?.avatar !== undefined && profile " [src]="profile.avatar"
+            [alt]="profile.firstName + 'image'">
+          <div class="loged" *ngIf="profile">
+            <span class="text-lg font-semibold">Hi !</span>
+            <h3 class="capitalize text-sm">{{profile.firstName }}</h3>
           </div>
-          <div class="login" *ngIf="!loged">
-            <span routerLink="log">Login</span>
-            <h3 routerLink="log">SignUp</h3>
+          <div class="flex" *ngIf="profile">
+            <lord-icon class="cursor-pointer " routerLink="setting" trigger="loop-on-hover"
+              src="assets/lordicons/setting.json"></lord-icon>
+          </div>
+          <div *ngIf="profile" class="flex flex-col gap-2 justify-center">
+            <button class="" (click)="logout()">Logout</button>
+            <button *ngIf="profile?.isAdmin"
+              class="bg-orange-400 text-white py-1 w-28 rounded-lg text-sm">Dashboard</button>
+          </div>
+          <div class="login" *ngIf="!profile">
+            <span routerLink="/login">Login</span>
+            <h3 routerLink="/signup">SignUp</h3>
           </div>
         </div>
         <div style="--d:3" class="currency">
@@ -93,11 +105,13 @@
             <button (click)="setCurrency('uro')" [ngClass]="{active:currency == 'uro'}">URO</button>
           </div>
         </div>
+        <div style="--d:4" class="dashboard">
+          <button class="bg-orange-400 text-white py-1 px-12 rounded-lg text-sm">Dashboard</button>
+        </div>
       </div>
     </div>
     <div [ngClass]="{active:activeSearch}" class="search-box">
       <button (click)="reflectActiveSearch()">
-
       </button>
       <div>
         <form action="">

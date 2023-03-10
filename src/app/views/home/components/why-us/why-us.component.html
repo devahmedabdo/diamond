@@ -5,7 +5,7 @@
 <div class="container flex justify-evenly flex-wrap gap-8 my-10">
   <div class="w-72 flex flex-col gap-3 text-center dReveal" *ngFor="let advantage of advantages;let i  =index "
     style="--d:{{i}}">
-    <lord-icon class="h-28 mx-auto w-28" colors="primary:#3f3f46,secondary:#fb923c" trigger="loop-on-hover" delay="1500"
+    <lord-icon class="h-28 mx-auto w-28" colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="2000"
       [src]="advantage.icon"></lord-icon>
     <h4 class="text-xl">{{advantage.title}}</h4>
     <p class="text-zinc-600">{{advantage.description}}</p>

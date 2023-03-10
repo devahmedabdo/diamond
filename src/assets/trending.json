@@ -16,8 +16,8 @@
     },
     {
       "name": "dela route diamond",
-      "price": 100,
-      "disscount": 10,
+      "price": 560,
+      "disscount": 0,
       "stock": 30,
       "image1": "../../../assets/product/product new (5).jpg",
       "image2": "../../../assets/product/product new (6).jpg",
@@ -73,7 +73,7 @@
     {
       "name": "Small Linen Lamp",
       "price": 487.0,
-      "disscount": 20,
+      "disscount": 0,
       "stock": 30,
       "image1": "../../../assets/product/4.1.jpg",
       "image2": "../../../assets/product/5.1.jpg",

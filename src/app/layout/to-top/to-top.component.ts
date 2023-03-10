@@ -27,17 +27,6 @@ export class ToTopComponent implements OnInit {
       let position =
         this.documentHieght - this.screenHieght - this.scrollHeight;
       this.dashOffset = position / this.divisionConst;
-
-      // console.log('screen ' + this.screenHieght);
-      // console.log('document ' + this.documentHieght);
-      // // console.log('position ' + window.scrollY);
-      // console.log('position ' + position);
-      // console.log('const ' + this.dashOffset);
-
-      // console.log('screen ' + this.screenHieght);
-      // console.log('document ' + this.documentHieght);
-      // console.log('position ' + position);
-      // console.log('const ' + this.dashOffset);
     };
   }
 }

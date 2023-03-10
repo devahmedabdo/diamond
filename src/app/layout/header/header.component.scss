@@ -1,35 +1,13 @@
-@layer {
-  .pusedo {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .centerX {
-    @apply left-1/2 -translate-x-1/2;
-  }
-  .centerY {
-    @apply top-1/2 -translate-y-1/2;
-  }
-}
 header {
-  @apply fixed z-50 top-0 left-0 w-full bg-white;
-  box-shadow: 0px -49px 14px 70px white, 0px 20px 20px 0px white;
+  box-shadow: 0px 5px 4px 1px white, 0px 1px 20px 7px white;
+
   .container {
-    @apply flex justify-between gap-3 text-zinc-800 items-center text-xl px-5 min-h-[68px];
+    min-height: var(--header-height);
     @media (max-width: 500px) {
       @apply px-[5px];
     }
-    .logo {
-      @apply font-extrabold text-orange-500;
-      a {
-        @apply w-10 block;
-      }
-    }
     nav {
-      @apply flex-grow;
       > ul {
-        @apply flex justify-center text-lg;
         > li {
           @apply relative overflow-hidden hover:overflow-visible;
           > a {
@@ -74,7 +52,6 @@ header {
           @apply flex-col bg-opacity-95 absolute overflow-auto top-full justify-start  left-1/2 pt-5 pl-10 pb-20 bg-white -translate-x-1/2 duration-300 scale-y-0;
           width: 100%;
           height: calc(100vh - 100px);
-          backdrop-filter: blur(10px);
           &::-webkit-scrollbar {
             display: none;
           }
@@ -165,26 +142,21 @@ header {
         @apply scale-0 opacity-0 fixed w-full top-0 h-screen left-0 -z-10 bg-slate-400 bg-opacity-30  transition-opacity;
       }
       > div {
-        @apply w-60 bg-orange-50 p-2 rounded-3xl  flex flex-col gap-2;
+        // @apply;
         > div {
-          @apply bg-white rounded-3xl p-3 hover:shadow-md translate-x-5 opacity-0;
+          @apply bg-white rounded-3xl p-3 hover:shadow-md translate-x-5 opacity-0 flex justify-center flex-wrap;
           transition-duration: 0.3s;
           transition-property: box-shadow, opacity, transform;
           transition-delay: 0s, calc((var(--d) * 0.1s)), calc((var(--d) * 0.1s));
         }
         .user-information {
-          @apply flex items-center gap-5;
+          // @apply ;
           img {
-            @apply w-16 h-16 object-cover rounded-full;
+            @apply w-16 h-16 object-cover rounded-full border-2 border-orange-50;
           }
           > div {
-            &.loged {
-              span {
-                @apply text-lg font-semibold;
-              }
-              h3 {
-                @apply text-sm;
-              }
+            button {
+              @apply bg-orange-400 text-white py-1 w-28 rounded-lg text-sm;
             }
             &.login {
               & * {
@@ -227,54 +199,93 @@ header {
       // }
     }
     .menu-icon {
-      @apply relative w-8 h-8;
+      @apply w-8 h-8 flex flex-col duration-300 gap-2 items-end;
       @media (min-width: 768px) {
         @apply hidden;
       }
       span {
-        @apply absolute w-full h-[3px] rounded-full bg-zinc-800 block;
-        transition: 0.3s;
-        left: 50%;
-        top: 50%;
-        &:nth-child(1) {
-          @apply top-3 right-0;
-          transform: translate(-15px, -12px) rotate(0deg);
-        }
+        @apply w-full h-1 rounded-full bg-zinc-800 block duration-300;
         &:nth-child(2) {
-          @apply w-5 top-3 right-0;
-          transform: translate(-5px, 2px) rotate(0deg);
+          @apply w-2/3;
         }
         &:nth-child(3) {
-          @apply w-2 top-6;
-          transform: translate(7px, 4px) rotate(0deg);
+          @apply w-1/3;
         }
       }
       &:hover {
         span {
           @apply bg-orange-300;
           &:nth-child(3) {
-            @apply w-full;
-            transform: translate(-50%, 4px) rotate(0deg);
+            @apply w-4/5;
           }
         }
       }
       &.active {
+        @apply gap-0 justify-center;
         span {
+          width: 100% !important;
           @apply bg-orange-300;
-          left: 50%;
-          top: 50%;
           &:nth-child(1) {
-            transform: translate(-50%, -50%) rotate(135deg);
+            transform: translateY(50%) rotate(135deg);
           }
           &:nth-child(2) {
             @apply hidden;
           }
           &:nth-child(3) {
-            @apply w-full;
-            transform: translate(-50%, -50%) rotate(227deg);
+            transform: translateY(-50%) rotate(-135deg);
           }
         }
       }
     }
+    // .menu-icon {
+    //   @apply relative w-8 h-8;
+    //   @media (min-width: 768px) {
+    //     @apply hidden;
+    //   }
+    //   span {
+    //     @apply absolute w-full h-[3px] rounded-full bg-zinc-800 block;
+    //     transition: 0.3s;
+    //     left: 50%;
+    //     top: 50%;
+    //     &:nth-child(1) {
+    //       @apply top-3 right-0;
+    //       transform: translate(-15px, -12px) rotate(0deg);
+    //     }
+    //     &:nth-child(2) {
+    //       @apply w-5 top-3 right-0;
+    //       transform: translate(-5px, 2px) rotate(0deg);
+    //     }
+    //     &:nth-child(3) {
+    //       @apply w-2 top-6;
+    //       transform: translate(7px, 4px) rotate(0deg);
+    //     }
+    //   }
+    //   &:hover {
+    //     span {
+    //       @apply bg-orange-300;
+    //       &:nth-child(3) {
+    //         @apply w-full;
+    //         transform: translate(-50%, 4px) rotate(0deg);
+    //       }
+    //     }
+    //   }
+    //   &.active {
+    //     span {
+    //       @apply bg-orange-300;
+    //       left: 50%;
+    //       top: 50%;
+    //       &:nth-child(1) {
+    //         transform: translate(-50%, -50%) rotate(135deg);
+    //       }
+    //       &:nth-child(2) {
+    //         @apply hidden;
+    //       }
+    //       &:nth-child(3) {
+    //         @apply w-full;
+    //         transform: translate(-50%, -50%) rotate(227deg);
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

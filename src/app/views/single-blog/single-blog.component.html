@@ -1,0 +1,51 @@
+<app-navigator [routes]="routes" [title]="blog.title"></app-navigator>
+<div class="container flex py-20 justify-between gap-3">
+  <div class="primary  max-w-3xl flex flex-col gap-5">
+    <img class="rounded-md" [src]="blog.img" [alt]="blog.title+' image'">
+    <div><button class="text-zinc-500 hover:text-orange-400 duration-300">{{blog.date}}</button>
+      By <button class="text-zinc-500 hover:text-orange-400 duration-300">{{blog.writer}}</button>
+    </div>
+    <h2 class="text-2xl font-bold">{{blog.title}}</h2>
+    <p>{{blog.description}}</p>
+    <q class="p-5 italic text-orange-500">{{blog.content.qoute}}</q>
+    <p>{{blog.content.qouteDescription}}</p>
+    <h3 class="font-semibold text-xl">{{blog.content.title2}}</h3>
+    <p>{{blog.content.title2Description}}</p>
+    <div class="flex gap-2 justify-center flex-wrap">
+      <img class="aspect-square object-cover rounded-md w-full" [ngClass]="{'max-w-xs':blog.content.images.length > 1}"
+        *ngFor="let img of blog.content.images" [src]="img.img" alt="Post image">
+    </div>
+    <div>
+      <button class="px-1 duration-300 hover:text-orange-500" *ngFor="let tag of blog.tags">{{tag}}</button>
+    </div>
+    <hr>
+    <div>
+      <h4 class="text-3xl my-5">{{numberOfComments}} Comment</h4>
+      <app-comment [parent]="{id:comment.id,reply:1}" [user]="user" *ngFor="let comment of blog.comments"
+        [comment]="comment" [hide]="false"></app-comment>
+    </div>
+    <hr>
+    <div class="capitalize flex flex-col gap-3 items-start">
+      <h6 class="font-bold text-xl">Leave a comment</h6>
+      <form class="w-full" [formGroup]="addReplyForm" (ngSubmit)="addComment(addReplyForm )">
+        <textarea placeholder="Add Your Comment ....." (focus)="this.invalidComment = false"
+          class="w-full bg-zinc-50 border border-zinc-100 p-5 focus:outline-none" formControlName="comment" cols="30"
+          rows="10"></textarea>
+        <div [ngClass]="{active:addReplyForm.invalid && addReplyForm.touched || invalidComment}"
+          class="text-red-500 capitalize relative top-5 opacity-0 error duration-300 -z-10">
+          * this field is reqierd
+        </div>
+        <button type="submit" class="shop-btn mt-2">add comment</button>
+      </form>
+    </div>
+  </div>
+  <div class="secondry min-w-max">
+    <app-side-search></app-side-search>
+    <hr>
+    <app-item-category [categories]="categories"></app-item-category>
+    <hr>
+    <app-side-recent-item [recentBlogs]="recentBlogs"></app-side-recent-item>
+  </div>
+</div>
+<hr>
+<app-subscribe></app-subscribe>

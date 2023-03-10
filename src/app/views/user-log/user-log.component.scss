@@ -1,5 +1,188 @@
-.error{
-  &.active{
-    @apply translate-y-0 opacity-100
+.login {
+  .container {
+    @apply flex flex-wrap-reverse gap-12 items-center justify-center py-14;
+    min-height: calc(100vh - var(--header-height));
+    .signup-progress {
+      @apply justify-between z-0  w-11/12;
+      &::after {
+        content: "";
+        @apply absolute top-0 h-full bg-orange-400 duration-300 -z-10;
+        width: var(--w);
+      }
+      > div {
+        @apply cursor-pointer w-10 h-10 flex items-center justify-center border-2 duration-300 mb-[-18px] bg-zinc-50 rounded-full;
+        &.active {
+          @apply border-orange-400 text-orange-400 bg-white;
+        }
+        &.error {
+          @apply bg-red-600 border-red-600 text-white;
+        }
+      }
+    }
+    > div {
+      @apply w-full flex flex-wrap-reverse gap-16 justify-center items-center;
+      .formImg {
+        @apply w-11/12 max-w-md min-w-[300px] flex justify-center;
+        lord-icon {
+          @apply w-72 h-72 md:scale-125;
+        }
+      }
+      form {
+        @apply w-11/12 max-w-md min-w-[300px] flex relative flex-col min-h-[520px] justify-end;
+        h2 {
+          @apply font-bold uppercase my-4;
+        }
+        .toNextBtn {
+          @apply flex items-center justify-center overflow-hidden relative w-full border border-transparent font-bold  px-5 py-4 rounded-2xl text-white duration-300 cursor-pointer;
+          &::after {
+            content: "";
+            @apply origin-left absolute top-0 left-0 w-full h-full bg-orange-400 duration-300 -z-10 scale-x-100;
+          }
+          &:hover {
+            @apply border-orange-400 text-orange-400;
+            &::after {
+              @apply scale-x-0;
+            }
+            span {
+              @apply border-orange-400 border-t-transparent;
+            }
+          }
+          span {
+            @apply rounded-full w-6 block h-6 border border-t-transparent border-white animate-spin;
+          }
+        }
+        > div:not(.form-btns) {
+          @apply absolute top-0 left-0 w-full duration-300 flex flex-col justify-center;
+          height: calc(100% - 60px);
+          &.hide {
+            @apply opacity-0 -translate-x-full;
+          }
+        }
+        .cropperBox {
+          // @apply ;
+          &.active {
+            @apply z-50 opacity-100;
+          }
+          > div {
+            &.active {
+              @apply flex z-50 opacity-100;
+            }
+            .imgCropper {
+              max-height: 500px;
+              > div {
+                img {
+                  margin: auto;
+                }
+              }
+            }
+          }
+          button {
+            @apply flex items-center gap-3 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white text-orange-400;
+          }
+        }
+      }
+    }
   }
 }
+// .container > div {
+//   width: 320px;
+//   height: 320px;
+// }
+// .container lord-icon {
+//   width: 320px;
+//   height: 320px;
+//   transform: scale(1.4);
+// }
+// @media (max-width: 890px) {
+//   .container lord-icon {
+//     display: none;
+//   }
+// }
+
+// form {
+//   // @apply flex fl
+//   // // display: flex;
+//   border: 1px solid #ffffff7d;
+//   flex-direction: column;
+//   gap: 10px;
+//   max-width: 502px;
+//   padding: 20px;
+//   position: relative;
+//   width: 100%;
+//   border-radius: 10px;
+// }
+
+// form::after {
+//   content: "";
+//   border-radius: 10px;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   background-color: #ffffff3b;
+//   z-index: -1;
+// }
+// form::before {
+//   content: "";
+//   position: absolute;
+//   width: 200px;
+//   height: 200px;
+//   aspect-ratio: 1/1;
+//   border-radius: 500px;
+//   top: 0;
+//   left: 0;
+//   transform: translate(-50%, -50%);
+//   background: linear-gradient(45deg, rgb(0, 217, 255), rgb(11, 126, 122));
+//   box-shadow: 0px 0px red;
+//   z-index: -1;
+// }
+// form h2 {
+//   color: #fff;
+//   font-size: 40px;
+//   font-weight: 700;
+//   text-transform: capitalize;
+// }
+// form > div {
+//   display: flex;
+//   color: #fff;
+//   position: relative;
+// }
+// form > div input {
+//   width: 100%;
+// }
+// form > div fa-icon {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   right: 10px;
+//   padding: 10px;
+//   font-size: 20px;
+//   cursor: pointer;
+// }
+// form input {
+//   all: unset;
+//   border-radius: 10px;
+//   padding: 16px;
+//   background: #ffffff26;
+//   border: 1px solid #eee6;
+//   color: #fff;
+// }
+// form input[type="submit"] {
+//   background: rgb(0 101 255 / 36%);
+//   text-align: center;
+//   font-size: 20px;
+//   font-weight: 500;
+// }
+// form input::placeholder {
+//   color: #fff;
+// }
+// form span {
+//   color: #fff;
+//   padding: 8px 16px;
+// }
+// form span:nth-last-of-type() {
+//   padding: 8px;
+//   text-align: center;
+//   text-decoration: underline;
+// }

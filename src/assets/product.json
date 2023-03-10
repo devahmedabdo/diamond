@@ -1,9 +1,9 @@
 {
   "products": [
     {
-      "name": "Aerodynamic Wooden Hat",
-      "price": 213,
-      "disscount": 20,
+      "name": "Aerodynamic Wooden Hatt",
+      "price": 90,
+      "disscount": 10,
       "stock": 30,
       "image1": "assets/product/product-1 (1).jpg",
       "image2": "assets/product/product-1 (2).jpg",

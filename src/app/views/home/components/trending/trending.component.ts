@@ -22,7 +22,7 @@ export class TrendingComponent implements OnInit {
     breakpoints: {
       0: {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 20,
       },
       // 700: {
       //   slidesPerView: 1,

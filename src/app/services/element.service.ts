@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ElementServices {
   constructor(private http: HttpClient) {}
-  
-  changeActive(toggle: boolean[]) {
-    console.log(toggle);
-    toggle.forEach((e: boolean) => {
-      e = !e;
-    });
-    console.log(toggle);
-  }
+
+  // changeActive(toggle: boolean[]) {
+  //   console.log(toggle);
+  //   toggle.forEach((e: boolean) => {
+  //     e = !e;
+  //   });
+  //   console.log(toggle);
+  // }
 }

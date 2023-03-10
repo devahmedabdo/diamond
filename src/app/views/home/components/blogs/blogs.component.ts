@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Blogs } from 'src/app/interfaces/blogs';
+import { Blog } from 'src/app/interfaces/blogs';
 import { UserService } from 'src/app/services/user.service';
 import { SwiperOptions } from 'swiper';
 @Component({
@@ -63,13 +63,13 @@ export class BlogsComponent implements OnInit {
     //   // },
     // },
   };
-  blogs!: Blogs[];
+  blogs!: Blog[];
   ngOnInit(): void {
-    this.user.getBlogs().subscribe({
-      next: (data) => {
-        this.blogs = data.blogs;
-        console.log(this.blogs);
-      },
-    });
+    // this.user.getBlogs().subscribe({
+    //   next: (data) => {
+    //     this.blogs = data.blogs;
+    //     console.log(this.blogs);
+    //   },
+    // });
   }
 }

@@ -1,31 +1,238 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { faEdit, faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { StorageService } from './../../services/storage.service';
+import {
+  faBuildingUser,
+  faCamera,
+  faCity,
+  faContactCard,
+  faExchange,
+  faFemale,
+  faHome,
+  faLocation,
+  faLocationDot,
+  faMailBulk,
+  faMailReply,
+  faMale,
+  faPhone,
+  faStreetView,
+  faUserTie,
+} from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import {
+  animate,
+  style,
+  transition,
+  trigger,
+  state,
+} from '@angular/animations';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-user-log',
   templateUrl: './user-log.component.html',
   styleUrls: ['./user-log.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(100, style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate(100, style({ opacity: 0 }))]),
+    ]),
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class UserLogComponent implements OnInit {
-  constructor(private auth: AuthService, private fb: FormBuilder) {}
+  constructor(
+    private auth: AuthService,
+    private fb: FormBuilder,
+    private storage: StorageService,
+    private router: Router
+  ) {}
+  formType: string = 'login';
+  ////////////////////////
+  emailIcon = faMailBulk;
+  eay = faEye;
+  eayslash = faEyeSlash;
+  contactIcon = faContactCard;
+  PhoneIcon = faPhone;
+  locationIcon = faLocationDot;
+  cityIcon = faCity;
+  governateIcon = faStreetView;
+  streetIcon = faHome;
+  male = faMale;
+  female = faFemale;
+  buyer = faUserTie;
+  seller = faBuildingUser;
+  camera = faCamera;
+  change = faExchange;
+  ////////////////////////
+  signupStep: number = 2;
+  type: string = 'password';
   loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    email: [
+      localStorage.getItem('email') || '',
+      [Validators.required, Validators.email],
+    ],
+    password: [localStorage.getItem('password') || '', [Validators.required]],
   });
+  signupForm = this.fb.group({
+    firstName: ['22', [Validators.required]],
+    lastName: ['22', [Validators.required]],
+    email: ['ahmed22@gmail.com', [Validators.required, Validators.email]],
+    password: ['223333322', [Validators.required, Validators.minLength(8)]],
+    //
+    phone: ['22', [Validators.required]],
+    street: ['22', [Validators.required]],
+    city: ['22', [Validators.required]],
+    governate: ['22', [Validators.required]],
+    country: ['22', [Validators.required]],
+    age: [22, [Validators.required, Validators.min(10)]],
+    //
+    gender: ['22', [Validators.required]],
+    accountType: ['22', [Validators.required]],
+    avatar: [''],
+  });
+  rememberMe: boolean = false;
+  setRememberMe(key: string, value: string) {
+    if (this.rememberMe) {
+      this.storage.storageItem(key, value);
+    }
+  }
+  loginInvalid: boolean = false;
+  // signupInvalid: boolean = false;
+  signupEmailDublicated: boolean = false;
+  // signupInvalidPhone!: boolean;
+  startPost?: boolean;
+  signupErrors!: any;
   login(data: any) {
+    // this.startPost = true;
     this.auth.loging(data).subscribe({
       next: (token: any) => {
         localStorage.setItem('token', token);
+        this.startPost = false;
       },
       error: (err) => {
-        this.changeLoginStatus(true);
+        this.changeFormStatus(true);
+        this.startPost = false;
       },
     });
   }
-  loginInvalid: boolean = false;
-  changeLoginStatus(status: boolean) {
-    this.loginInvalid = status;
+  signup(data: any) {
+    // this.signupForm.
+    // if (this.userImgCropped) {
+    //   this.signupForm.controls.avatar.value = ;
+    // }
+    // this.startPost = true;
+    // console.log(this.signupForm);
+    // this.uploudFile();
+    if (this.userImgCropped) {
+      this.signupForm.controls.avatar.setValue(this.userImgCropped);
+    }
+    this.auth.signup(data).subscribe({
+      next: (res: any) => {
+        localStorage.setItem('token', res.token);
+        // this.uploudFile();
+        this.startPost = false;
+
+        // console.log(token);
+      },
+      error: (err) => {
+        // this.changeFormStatus(true);
+        this.startPost = false;
+        this.signupErrors = err.error.errors;
+
+        console.log(err);
+      },
+    });
   }
-  ngOnInit(): void {}
+  // handle(event: any) {
+  //   this.userImg = event.target.files;
+  // }
+  userImg: any;
+  userImgCropped: any;
+  userImgBox: boolean = false;
+  userImgBoxReady: boolean = false;
+  onFileChanged(event: any) {
+    this.userImg = event;
+    this.userImgBox = true;
+  }
+  cropImg(croppedImg: ImageCroppedEvent) {
+    // console.log(croppedImg);
+    this.userImgCropped = croppedImg.base64;
+  }
+  imgLoad() {
+    console.log('image loaded succesfully');
+  }
+  initCropper() {
+    console.log('image cropped succesfully');
+    this.userImgBoxReady = true;
+  }
+  imgFaild() {
+    console.log('failed !!');
+  }
+
+  uploudFile() {
+    if (this.userImg) {
+      let myData = new FormData();
+      // myData.
+      console.log(this.userImgCropped);
+      console.log(this.userImg.target.files);
+      myData.append('avatar', this.userImg.target.files[0]);
+      console.log(myData);
+      this.auth.addImage(this.userImgCropped).subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+    }
+  }
+  removeError(error: any) {
+    // console.log(this.signupEmailDublicated);
+    // console.log(this.formType);
+    // console.log(this.signupForm);
+    if (error) {
+      // delete
+      delete this.signupErrors?.[error];
+      // console.log(this.signupErrors);
+      // console.log(any);
+      // any = false;
+      // [].indexOf
+      // this.signupErrors.indexOf(any);
+    }
+  }
+  checkEmail() {
+    if (this.signupForm.controls.email.valid) {
+      this.auth
+        .checkEmail({ email: this.signupForm.controls.email.value })
+        .subscribe({
+          next: (emailExist: any) => {
+            this.signupEmailDublicated = emailExist;
+            console.log(emailExist);
+            // console.log(this.signupForm.value);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+    }
+  }
+  changeFormStatus(status: boolean) {
+    this.loginInvalid = status;
+    // this.signupInvalid = status;
+    // this.signupEmailDublicated = status;
+  }
+  log(a: any) {
+    console.log(a);
+  }
+  ngOnInit(): void {
+    this.formType = this.router.url.replace('/', '');
+    console.log();
+  }
 }

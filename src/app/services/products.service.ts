@@ -4,6 +4,7 @@ import { Product, ProductResponse } from './../interfaces/product';
 import { Observable } from 'rxjs';
 import { environment } from './../../environments/environment';
 import { StorageService } from './storage.service';
+import { BlogComment } from '../interfaces/blogs';
 // import { Product } from 'src/app/interfaces/product';
 @Injectable({
   providedIn: 'root',
@@ -84,4 +85,5 @@ export class ProductsService {
       }
     });
   }
+  ///////
 }

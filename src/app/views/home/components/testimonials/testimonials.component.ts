@@ -28,7 +28,8 @@ export class TestimonialsComponent implements OnInit {
   swiperConfig: SwiperOptions = {
     effect: 'fade',
     grabCursor: true,
-    zoom: true,
+    // zoom: true,
+    // loop: true,
     autoplay: {
       delay: 5000,
     },

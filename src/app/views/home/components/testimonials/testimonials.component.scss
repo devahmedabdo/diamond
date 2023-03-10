@@ -2,11 +2,32 @@
   .swiper {
     @apply py-8;
   }
+  .swiper-slide {
+    img {
+      @apply opacity-0 -translate-y-0 scale-0;
+    }
+  }
   .swiper-slide.swiper-slide-visible.swiper-slide-active {
     > div {
       * {
         @apply top-0 opacity-100;
       }
+    }
+    img {
+      @apply opacity-100 -translate-y-0 scale-100;
+    }
+  }
+  .swiper-slide.swiper-slide-prev {
+    img {
+      @apply -translate-x-24 -translate-y-0 scale-50 opacity-50;
+    }
+  }
+  .swiper-slide.swiper-slide-next {
+    opacity: 1 !important;
+  }
+  .swiper-slide.swiper-slide-next {
+    img {
+      @apply translate-x-24 -translate-y-0 scale-50 opacity-50;
     }
   }
   .swiper-button-prev:after,

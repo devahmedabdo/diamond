@@ -1,5 +1,7 @@
 div {
-  @apply bg-zinc-700 text-white py-8 text-center;
+  background: url(../../../assets/asd.jpg) center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   button {
     @apply cursor-pointer text-lg uppercase;
     fa-icon {

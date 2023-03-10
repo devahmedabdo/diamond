@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navigator',
@@ -8,20 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigator.component.scss'],
 })
 export class NavigatorComponent implements OnInit {
+  @Input() routes!: any[];
+  @Input() title?: string;
   home = faHome;
-  routes: any = [
-    {
-      name: 'gold',
-      rout: '/cart',
-    },
-    {
-      name: 'any dawd',
-      rout: '/cart',
-    },
-    {
-      name: 'gold',
-    },
-  ];
+
   constructor(public router: Router) {}
 
   ngOnInit(): void {

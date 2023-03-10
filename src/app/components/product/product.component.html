@@ -1,4 +1,8 @@
 <div class="product">
+  <div *ngIf="details.disscount > 0" class="sale text-sm">
+    <span class="pt-2">{{details.disscount}}%</span>
+    <span class="text-xs pb-2">OFF</span>
+  </div>
   <div class="product-images">
     <img [src]="details.image1" alt="product image one">
     <img [src]="details.image2" alt="product image two">
@@ -45,6 +49,7 @@
     <span *ngIf="details.review == 0">no review</span>
   </div>
   <h3 (click)="storeSinglProduct(details)">{{details.name}}</h3>
-  <h4><span>{{details.price - (details.price * details.disscount / 100)}}$</span> <span
-      class="line-through">{{details.price}}$</span></h4>
+  <h4><span>{{details.price | currency}}</span> <span *ngIf="details.disscount > 0"
+      class="line-through">{{(details.price * 100) /
+      (100 - details.disscount) | currency}}</span></h4>
 </div>

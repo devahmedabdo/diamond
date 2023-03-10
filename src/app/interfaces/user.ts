@@ -2,7 +2,9 @@
 export type User = {
   firstName: string;
   lastName: string;
-  img: 'string';
+  // name: string;
+  avatar: string;
+  img: string;
   email: string;
   password: string;
   phone: string;
@@ -11,11 +13,19 @@ export type User = {
   city: string;
   street: string;
   rate: number;
+  isAdmin: boolean;
   opinion: string;
   shopTime: number;
 };
 export type UsersResponse = {
   users: User[];
+  news: any[];
+  // limit: number;
+  // total: number;
+};
+export type UserResponse = {
+  profile: User;
+  news: any[];
   // limit: number;
   // total: number;
 };
