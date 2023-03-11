@@ -305,7 +305,7 @@
               <span *ngIf="!userImgBoxReady"
                 class="rounded-full w-6 block h-6 border border-t-transparent border-white animate-spin"></span>
               <div [ngClass]="{active:userImgBoxReady}"
-                class="flex gap-5 -z-10 opacity-0 duration-200 relative w-full max-w-2xl  bg-zinc-200">
+                class="flex flex-wrap  gap-5 -z-10 opacity-0 duration-200 relative w-full max-w-2xl  bg-zinc-200">
                 <image-cropper class="imgCropper" [imageChangedEvent]="userImg" [aspectRatio]="1/1"
                   [maintainAspectRatio]="true" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
                   (cropperReady)="initCropper()" (loadImageFailed)="imgFaild()">

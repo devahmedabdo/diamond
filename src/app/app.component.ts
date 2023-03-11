@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'diamond';
+  temp: boolean = false;
   ngOnInit() {
+    setTimeout(() => {
+      this.temp = true;
+    },2000);
     window.addEventListener('scroll', () => {
       let divClass = document.querySelectorAll(
         '.dReveal,.lReveal,.uReveal,.rReveal'
