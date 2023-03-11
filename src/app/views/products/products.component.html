@@ -1,12 +1,17 @@
-<lord-icon colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="1500"
-  src="assets/asd/121421-login (1).json"></lord-icon>
-<lord-icon colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="1500"
-  src="assets/asd/login.json"></lord-icon>
-<lord-icon colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="1500"
-  src="assets/asd/singup.json"></lord-icon>
-<lord-icon colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="1500"
-  src="assets/asd/Comp 1.json"></lord-icon>
-<lord-icon colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="1500"
-  src="assets/asd/Comp 1 (1).json"></lord-icon>
-<lord-icon colors="primary:#3f3f46,secondary:#fb923c" trigger="loop" delay="1500"
-  src="assets/asd/UnderConstruction.lottie"></lord-icon>
+<div class="what-we-offer my-20 py-20">
+  <div class="container">
+    <div class="titles max-w-lg mx-auto text-center">
+      <h1 class="text-4xl font-extrabold py-5">WHAT DO WE OFFER ?</h1>
+      <p class="text-xl font-medium ">Choose from our wide range of tailored solutions
+        that are designed to fit your unique needs</p>
+    </div>
+    <div class="flex divs flex-wrap justify-center pt-12">
+      <div class="shadow-xl flex flex-col gap-5 rounded-lg p-5" *ngFor="let div of divs">
+        <img class="w-16" [src]="div.icon" alt="">
+        <h2 class="font-bold text-4xl">{{div.name}}</h2>
+        <p class="text-xl font-medium">{{div.dis}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
